@@ -10,7 +10,7 @@ on:
 
 jobs:
   validate-hacs:
-    if: github.repository == 'alexpfau/calendar-card-pro'
+    if: github.repository == 'bdvirus/calendar-card-pro'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
