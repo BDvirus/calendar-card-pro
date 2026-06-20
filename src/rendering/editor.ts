@@ -843,6 +843,10 @@ export class CalendarCardProEditor extends LitElement {
             <h5>${this._getTranslation('weekday_font')}</h5>
             ${this.addTextField('weekday_font_size', this._getTranslation('weekday_font_size'))}
             ${this.addTextField('weekday_color', this._getTranslation('weekday_color'))}
+            ${this.addBooleanField(
+              'fullDaysOfWeek',
+              this._getTranslation('fullDaysOfWeek'),
+            )}
 
             <!-- Day Formatting -->
             <h5>${this._getTranslation('day_font')}</h5>

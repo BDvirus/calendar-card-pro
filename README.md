@@ -62,19 +62,11 @@ Built with **performance in mind**, the card leverages **intelligent refresh mec
 
 **➡️ View the [Full Release Notes](./docs/RELEASE_NOTES.md) for a complete list of features.**
 
-### Latest Release: v3.2
+### Latest Release: v3.3
 
-- 📝 **Event Description Display**: Show event descriptions with [configurable line clamping](#-event-description-display), HTML stripping, and full styling control
-- 🌤️ **UV Index in Weather**: Display [UV index in weather forecasts](#weather-configuration-options) with configurable visibility threshold
-- 🎨 **Event Icon Alignment**: Control [vertical alignment of event icons](#-event-description-display) (time, location, description) with `event_icon_vertical_alignment`
-- 🏷️ **Label Icon Color**: Customize [label icon colors](#-entity-configuration) per entity with `label_icon_color`
-- 🕐 **Two-Digit Hours**: Pad hours with leading zero via `time_two_digit_hours`
-- ↔️ **RTL Support**: Full right-to-left support for event borders and accent lines
-- 🔄 **Improved Loading UX**: Events stay visible during refresh; subtle spinner replaces full-screen loading
-- 🌍 **Three New Languages**: Estonian, Lithuanian, and Turkish (33 total)
-- 🌐 **Three New Editor Translations**: Polish, Estonian, and Lithuanian (8 total)
-- 🐛 **HA 2026.3+ Compatibility**: Migrated editor dropdowns to the new WebAwesome API
-- 🐛 **Key Bug Fixes**: Weather WebSocket leak, location display corruption with custom regex, browser_mod action compatibility
+- 🗓️ **Full Weekday Names**: Added the `fullDaysOfWeek` option to display full localized weekday names like `Monday` instead of abbreviations like `Mon`
+- 🌐 **Cleaner Editor Fallbacks**: Missing editor-only translations now fall back to English instead of showing raw config keys
+- 📐 **Date Column Layout Improvements**: The date column automatically widens and wraps more gracefully when full weekday names are enabled
 
 ### v3.1
 
@@ -639,6 +631,7 @@ Control the appearance of the date column for a personalized calendar view:
 # Base date column styling
 weekday_font_size: '14px'
 weekday_color: 'var(--primary-text-color)'
+fullDaysOfWeek: false # Show "Sunday" instead of "Sun"
 day_font_size: '26px'
 day_color: 'var(--primary-text-color)'
 month_font_size: '12px'
@@ -659,6 +652,8 @@ The date column appears on the left side of each day's events and helps users qu
 
 - **Weekend days** (Saturday and Sunday) using the `weekend_*` parameters
 - **Today's date** using the `today_*` parameters
+
+Set `fullDaysOfWeek: true` if you want full weekday names like `Monday` and `Thursday` instead of abbreviated labels like `Mon` and `Thu`.
 
 When special styling parameters are not specified, they will inherit from the base styling. If today falls on a weekend, today styling takes precedence over weekend styling.
 
@@ -1236,6 +1231,7 @@ These examples demonstrate how Calendar Card Pro can be customized to match any 
 | `date_vertical_alignment`                  | string            | `middle`                                           | Vertical alignment of date column (`top`, `middle`, or `bottom`)                                                                                                                                                                                            |
 | `weekday_font_size`                        | string            | `14px`                                             | Weekday name font size                                                                                                                                                                                                                                      |
 | `weekday_color`                            | string            | `--primary-text-color`                             | Weekday name font color                                                                                                                                                                                                                                     |
+| `fullDaysOfWeek`                           | boolean           | `false`                                            | Show full weekday names such as `Monday` instead of abbreviated names such as `Mon`                                                                                                                                                                        |
 | `day_font_size`                            | string            | `26px`                                             | Day numbers font size                                                                                                                                                                                                                                       |
 | `day_color`                                | string            | `--primary-text-color`                             | Day numbers font color                                                                                                                                                                                                                                      |
 | `show_month`                               | boolean           | `true`                                             | Whether to show month names                                                                                                                                                                                                                                 |

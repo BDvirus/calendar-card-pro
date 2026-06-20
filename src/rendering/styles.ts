@@ -12,6 +12,12 @@ import type * as Types from '../config/types';
  * Returns an object with property-value pairs for use with styleMap
  */
 export function generateCustomPropertiesObject(config: Types.Config): Record<string, string> {
+  const weekdayFontSize = parseFloat(config.weekday_font_size);
+  const dayFontSize = parseFloat(config.day_font_size);
+  const dateColumnWidth = config.fullDaysOfWeek
+    ? `${Math.max(dayFontSize * 1.75, weekdayFontSize * 5.5)}px`
+    : `${dayFontSize * 1.75}px`;
+
   const props: Record<string, string> = {
     '--calendar-card-background-color': config.background_color,
     '--calendar-card-font-size-weekday': config.weekday_font_size,
@@ -43,7 +49,7 @@ export function generateCustomPropertiesObject(config: Types.Config): Record<str
     '--calendar-card-icon-size-description': config.description_icon_size || '14px',
     '--calendar-card-description-max-lines':
       config.description_max_lines > 0 ? String(config.description_max_lines) : 'none',
-    '--calendar-card-date-column-width': `${parseFloat(config.day_font_size) * 1.75}px`,
+    '--calendar-card-date-column-width': dateColumnWidth,
     '--calendar-card-date-column-vertical-alignment': config.date_vertical_alignment,
     '--calendar-card-event-icon-vertical-alignment':
       config.event_icon_vertical_alignment === 'top'
@@ -345,6 +351,7 @@ export const cardStyles = css`
     font-size: var(--calendar-card-font-size-weekday);
     line-height: var(--calendar-card-font-size-weekday);
     color: var(--calendar-card-color-weekday);
+    overflow-wrap: anywhere;
   }
 
   .day {

@@ -63,6 +63,7 @@ export interface Config {
   date_vertical_alignment: string;
   weekday_font_size: string;
   weekday_color: string;
+  fullDaysOfWeek: boolean;
   day_font_size: string;
   day_color: string;
   show_month: boolean;

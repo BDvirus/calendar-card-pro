@@ -65,6 +65,7 @@ export const DEFAULT_CONFIG: Types.Config = {
   date_vertical_alignment: 'middle',
   weekday_font_size: '14px',
   weekday_color: 'var(--primary-text-color)',
+  fullDaysOfWeek: false,
   day_font_size: '26px',
   day_color: 'var(--primary-text-color)',
   show_month: true,

@@ -514,7 +514,9 @@ function renderDateColumn(
   const translations = Localize.getTranslations(language);
 
   // Get formatted date parts from translations
-  const weekday = translations.daysOfWeek[date.getDay()];
+  const weekday = config.fullDaysOfWeek
+    ? translations.fullDaysOfWeek[date.getDay()]
+    : translations.daysOfWeek[date.getDay()];
   const day = date.getDate();
   const month = translations.months[date.getMonth()];
 

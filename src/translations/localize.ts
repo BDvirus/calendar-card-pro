@@ -191,6 +191,12 @@ export function translate(
         return editorValue;
       }
     }
+    if (section === 'editor') {
+      const defaultEditorValue = TRANSLATIONS[DEFAULT_LANGUAGE]?.editor?.[subKey];
+      if (typeof defaultEditorValue === 'string' || Array.isArray(defaultEditorValue)) {
+        return defaultEditorValue;
+      }
+    }
     // If nested path doesn't exist or is wrong type, use fallback or subKey
     return fallback !== undefined ? fallback : subKey;
   }

@@ -123,6 +123,7 @@
     "weekday_font": "Weekday font",
     "weekday_font_size": "Weekday font size",
     "weekday_color": "Weekday color",
+    "fullDaysOfWeek": "Show full weekday names",
     "day_font": "Day font",
     "day_font_size": "Day font size",
     "day_color": "Day color",

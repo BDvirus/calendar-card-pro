@@ -1,3 +1,28 @@
+# Calendar Card Pro v3.3.0
+
+**Full weekday names and smoother editor labeling.** This release adds a new date-display option for full localized weekday names and improves editor translation fallback behavior.
+
+## 🎉 New Features
+
+### 🗓️ Full Weekday Names
+
+Calendar Card Pro now supports displaying full localized weekday names in the date column:
+
+- **`fullDaysOfWeek` Option** - Toggle between abbreviated weekday labels like `Mon` and full names like `Monday`
+- **Localized Output** - Uses each language's existing `fullDaysOfWeek` translations automatically
+- **Visual Editor Support** - The new option is available directly in the Date Display section of the editor
+
+## 🐛 Improvements
+
+### Editor & Layout
+
+- **Editor Translation Fallback** - Missing editor-only translation keys now fall back to English instead of rendering the raw config key
+- **Date Column Width Adjustment** - The date column automatically widens and wraps more gracefully when full weekday names are enabled
+
+**Full Changelog**: https://github.com/BDvirus/calendar-card-pro/compare/v3.2.0...v3.3.0
+
+---
+
 # Calendar Card Pro v3.2.0
 
 **Event descriptions, weather UV index, RTL support, and Home Assistant 2026.3 compatibility.** This release introduces major new display features alongside critical compatibility updates and significant bug fixes.
